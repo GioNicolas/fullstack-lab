@@ -11,7 +11,7 @@ if subprocess.run([sys.executable, "-m", "pytest", "-q"], cwd=root).returncode:
     raise SystemExit(1)
 
 frontend = root / "frontend"
-if frontend.exists():
+if (frontend / "package.json").exists():
     npm = shutil.which("npm")
     if npm is None:
         raise SystemExit("npm não encontrado. Instale Node.js e execute npm ci em frontend/.")
