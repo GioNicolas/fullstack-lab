@@ -5,6 +5,7 @@ from sqlalchemy import text
 from sqlalchemy.exc import IntegrityError
 
 from app.database import Base, make_engine
+from database.seed import seed
 import app.models  # noqa: F401 — registra as tabelas na metadata
 
 
@@ -60,3 +61,14 @@ def test_participants_query_returns_names(tmp_path):
         query = Path("database/participants.sql").read_text()
         names = connection.execute(text(query), {"event_id": 1}).scalars().all()
         assert names == ["Ana", "Bruno"]
+
+
+def test_seed_preserves_existing_event_and_adds_missing_users(tmp_path):
+    engine = database(tmp_path)
+    with engine.begin() as connection:
+        connection.execute(text("INSERT INTO events (id, title, date, capacity) VALUES (1, 'Meu evento', '2026-10-10', 2)"))
+    seed(engine)
+    seed(engine)
+    with engine.connect() as connection:
+        assert connection.scalar(text("SELECT title FROM events WHERE id = 1")) == "Meu evento"
+        assert connection.scalar(text("SELECT COUNT(*) FROM users")) == 2

@@ -11,11 +11,15 @@ from app.models import Event, User
 def seed(engine):
     Base.metadata.create_all(engine)
     with Session(engine) as session:
-        if session.get(Event, 1) is None:
-            session.add(Event(id=1, title="Oficina de Python", date=date(2026, 10, 10), capacity=2))
-            session.add(User(id=1, name="Ana", email="ana@example.org"))
-            session.add(User(id=2, name="Bruno", email="bruno@example.org"))
-            session.commit()
+        examples = [
+            Event(id=1, title="Oficina de Python", date=date(2026, 10, 10), capacity=2),
+            User(id=1, name="Ana", email="ana@example.org"),
+            User(id=2, name="Bruno", email="bruno@example.org"),
+        ]
+        for item in examples:
+            if session.get(type(item), item.id) is None:
+                session.add(item)
+        session.commit()
 
 
 if __name__ == "__main__":
