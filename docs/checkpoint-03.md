@@ -33,7 +33,8 @@ Complete `POST /events/{event_id}/registrations` com `{"user_id": 1}`. Sucesso r
 1. Faça `create_app` criar um engine e tabelas e disponibilizar o engine para `get_session`.
 2. Troque as rotas de eventos para usar o banco. Rode os testes antigos e o de persistência.
 3. Inclua a rota de inscrições na aplicação e implemente uma verificação por vez.
-4. Rode `python scripts/check.py`, faça commit e push em `aluno`, confira o Actions.
+4. Rode `python -m database.seed` para testar manualmente com o usuário `1`.
+5. Rode `python scripts/check.py`, faça commit e push em `aluno`, confira o Actions.
 
 ## Dicas graduais
 
