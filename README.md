@@ -49,7 +49,7 @@ Com o ambiente ativado, execute os testes:
 python scripts/check.py
 ```
 
-Os testes de criação começarem vermelhos é esperado. Eles descrevem o que falta implementar. Ao terminar a atividade, todos devem passar.
+É esperado que os testes de criação comecem vermelhos. Eles descrevem o que falta implementar. Ao terminar a atividade, todos devem passar.
 
 Para iniciar a API:
 
