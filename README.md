@@ -1,6 +1,6 @@
 # Laboratório Full Stack — Trilha
 
-Você vai construir um sistema de eventos ao longo de quatro atividades para casa. Cada atualização acrescenta material ao **mesmo projeto**. A atividade atual é [Checkpoint 02 — Modelar inscrições no banco](docs/checkpoint-02.md).
+Você vai construir um sistema de eventos ao longo de quatro atividades para casa. Cada atualização acrescenta material ao **mesmo projeto**. A atividade atual é [Checkpoint 03 — Integrar API e banco](docs/checkpoint-03.md).
 
 ## O que precisa instalar
 
