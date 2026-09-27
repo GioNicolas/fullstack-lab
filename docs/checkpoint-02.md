@@ -21,8 +21,8 @@ O SQLite deve ter três tabelas: `events`, `users` e `registrations`. Cada inscr
 ## Caminho sugerido
 
 1. Desenhe as três tabelas e marque quais colunas são chaves primárias e estrangeiras.
-2. Complete os modelos SQLAlchemy e execute `python scripts/check.py`.
-3. Experimente criar o banco de exemplo com `python -m database.seed`.
+2. Complete os modelos SQLAlchemy e execute `uv run --locked python scripts/check.py`.
+3. Experimente criar o banco de exemplo com `uv run --locked python -m database.seed`.
 4. Complete a consulta SQL e rode os testes acumulados novamente.
 5. Faça commit, push na branch `aluno` e confira o Actions.
 

@@ -6,7 +6,7 @@ A organização já consegue listar eventos e consultar um evento pelo ID. Ela p
 
 ## Antes de começar
 
-1. Siga o setup e rode `python scripts/check.py` conforme o `README.md`.
+1. Siga o setup e rode `uv run --locked python scripts/check.py` conforme o `README.md`.
 2. Execute a API e visite `/docs` no navegador para explorar as rotas.
 3. Leia `EventInput`, `create_app` e os testes em `tests/test_events.py`.
 
@@ -35,7 +35,7 @@ Rejeite com **422** título vazio, data inválida e capacidade menor ou igual a 
 1. Faça um evento válido ser criado e encontrado na listagem.
 2. Garanta IDs diferentes.
 3. Trate as entradas inválidas e confirme que não houve escrita.
-4. Rode `python scripts/check.py` e faça push para `aluno`.
+4. Rode `uv run --locked python scripts/check.py` e faça push para `aluno`.
 5. Confira a execução verde na aba **Actions** do seu fork.
 
 ## Dicas graduais
@@ -60,4 +60,4 @@ O ID deve ser positivo e diferente dos IDs já usados nessa instância. Observe 
 
 ## Conclusão
 
-O checkpoint está concluído quando `python scripts/check.py` passa localmente e a execução do Actions para o mesmo commit está verde. Para conferir seu entendimento, identifique onde a validação acontece e o que ocorreria com os dados após reiniciar a aplicação.
+O checkpoint está concluído quando `uv run --locked python scripts/check.py` passa localmente e a execução do Actions para o mesmo commit está verde. Para conferir seu entendimento, identifique onde a validação acontece e o que ocorreria com os dados após reiniciar a aplicação.
