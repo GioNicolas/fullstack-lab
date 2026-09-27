@@ -52,7 +52,7 @@ Abra `http://127.0.0.1:8000/docs` para testar as rotas pelo navegador. Pare o se
 A partir do checkpoint 2, o projeto inclui um banco SQLite. Depois de completar os modelos, crie os dados de demonstração com:
 
 ```bash
-python -m database.seed
+uv run --locked python -m database.seed
 ```
 
 O arquivo `events.db` é local e não entra nos commits. O usuário de demonstração tem ID `1`. No checkpoint 3, a API passa a usar esse mesmo arquivo quando você inicia o servidor.
